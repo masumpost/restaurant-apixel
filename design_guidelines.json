@@ -1,0 +1,117 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Jewel & Luxury)",
+  "color_palette": {
+    "background": "#0F1A15",
+    "surface": "#1B4332",
+    "surface_hover": "#2D5A46",
+    "primary": "#F4A623",
+    "primary_hover": "#D18A1D",
+    "text_primary": "#FFF8F0",
+    "text_secondary": "rgba(255, 248, 240, 0.7)",
+    "border": "rgba(244, 166, 35, 0.2)"
+  },
+  "typography": {
+    "heading_font": "Playfair Display, serif",
+    "body_font": "Nunito, sans-serif",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none font-serif",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-serif",
+    "h3": "text-xl sm:text-2xl font-serif",
+    "body": "text-base font-sans leading-relaxed text-[#FFF8F0]/70",
+    "button": "text-sm font-sans font-bold uppercase tracking-wider",
+    "label": "text-xs font-sans uppercase tracking-[0.2em]"
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 md:py-32",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12",
+    "card_padding": "p-8",
+    "radius": "rounded-none md:rounded-lg",
+    "alignment": "optical alignment preferred. Headings left-aligned or centered based on section balance."
+  },
+  "surface_strategies": {
+    "header": "backdrop-blur-xl bg-[#0F1A15]/80 border-b border-[#F4A623]/10 sticky top-0 z-50",
+    "card": "bg-[#1B4332]/40 backdrop-blur-md border border-[#F4A623]/20 shadow-2xl hover:-translate-y-1 transition-transform duration-300",
+    "button_primary": "bg-[#F4A623] text-[#0F1A15] hover:bg-[#D18A1D] transition-colors",
+    "button_outline": "bg-transparent border border-[#F4A623] text-[#F4A623] hover:bg-[#F4A623]/10",
+    "admin_sidebar": "bg-[#0A120E] border-r border-[#1B4332]"
+  },
+  "components_instructions": {
+    "shadcn_ui": [
+      "button", "card", "dialog", "form", "input", "carousel", "tabs", "badge", "textarea", "table", "dropdown-menu"
+    ],
+    "icons": "lucide-react",
+    "animations": "framer-motion for page transitions and scroll reveals",
+    "whatsapp_floating": "fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center",
+    "parallax_hero": "use standard CSS background-attachment: fixed or framer-motion scroll y-transform for parallax effect on the hero background image."
+  },
+  "media": {
+    "logo": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/3330e33a-96b1-42f2-92f1-58cb71a063d6/images/e13015c09058157c7450da00998284b591ee87bef11acd270db7e3b77b23fb66.png",
+      "description": "Minimalist luxury gold logo for Panshi Restaurants",
+      "placement": "Header navigation, footer, and admin sidebar"
+    },
+    "hero_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/3330e33a-96b1-42f2-92f1-58cb71a063d6/images/e094072f91b5cd08500507d024961645151601df1495c51abb2f8001bb334f2c.png",
+      "description": "Cinematic dark food photography of a lavish Bengali feast",
+      "placement": "Homepage hero section with parallax and bg-black/50 overlay"
+    },
+    "food_dishes": [
+      {
+        "url": "https://images.unsplash.com/photo-1733410647363-2184bdcf24fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwxfHxkYXJrJTIwcHJlbWl1bSUyMHJlc3RhdXJhbnQlMjBmb29kJTIwZGlzaGVzJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzc1NDY0NTE5fDA&ixlib=rb-4.1.0&q=85",
+        "placement": "Featured Dishes Carousel or Menu Item 1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1704984678359-b8a4d2a70061?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHw0fHxkYXJrJTIwcHJlbWl1bSUyMHJlc3RhdXJhbnQlMjBmb29kJTIwZGlzaGVzJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzc1NDY0NTE5fDA&ixlib=rb-4.1.0&q=85",
+        "placement": "Featured Dishes Carousel or Menu Item 2"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1733410647363-4c81ee576ff8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwzfHxkYXJrJTIwcHJlbWl1bSUyMHJlc3RhdXJhbnQlMjBmb29kJTIwZGlzaGVzJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzc1NDY0NTE5fDA&ixlib=rb-4.1.0&q=85",
+        "placement": "Featured Dishes Carousel or Menu Item 3"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1733410647375-3be1697aa4f1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwyfHxkYXJrJTIwcHJlbWl1bSUyMHJlc3RhdXJhbnQlMjBmb29kJTIwZGlzaGVzJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzc1NDY0NTE5fDA&ixlib=rb-4.1.0&q=85",
+        "placement": "Featured Dishes Carousel or Menu Item 4"
+      }
+    ],
+    "restaurant_interior": [
+      {
+        "url": "https://images.unsplash.com/photo-1756981168649-0e3c3c8a32f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwaW50ZXJpb3IlMjBkYXJrJTIwZ3JlZW4lMjBnb2xkJTIwbHV4dXJ5fGVufDB8fHx8MTc3NTQ2NDUxOXww&ixlib=rb-4.1.0&q=85",
+        "placement": "About Us Section Image 1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1661422586023-681ea60507e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50JTIwaW50ZXJpb3IlMjBkYXJrJTIwZ3JlZW4lMjBnb2xkJTIwbHV4dXJ5fGVufDB8fHx8MTc3NTQ2NDUxOXww&ixlib=rb-4.1.0&q=85",
+        "placement": "About Us Section Image 2"
+      }
+    ],
+    "blog_and_people": [
+      {
+        "url": "https://images.unsplash.com/photo-1740018187559-fdc2480b88c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjByZXN0YXVyYW50JTIwZGluaW5nJTIwcGVvcGxlfGVufDB8fHx8MTc3NTQ2NDUzNnww&ixlib=rb-4.1.0&q=85",
+        "placement": "Blog featured image or Reviews background"
+      },
+      {
+        "url": "https://images.pexels.com/photos/3923414/pexels-photo-3923414.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "placement": "Blog list item image"
+      },
+      {
+        "url": "https://images.pexels.com/photos/8922199/pexels-photo-8922199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "placement": "Blog list item image 2"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Follow the color palette strictly. Use #0F1A15 for the main background to set the dark/rich mood.",
+    "Implement the 'Optical Clarity' glassmorphism for the header (bg-[#0F1A15]/80 backdrop-blur-xl).",
+    "Use Playfair Display (font-serif) for all headings, ensuring tight tracking and never exceeding text-6xl for H1.",
+    "Use Nunito (font-sans) for body text and labels.",
+    "Do NOT center everything. Opt for asymmetrical 'bento' layouts for sections like About or Services.",
+    "Add 'data-testid' to all interactive elements (buttons, links, form inputs).",
+    "Ensure high contrast on hover states, e.g., text color must remain visible on hover.",
+    "For the hero image, apply a max bg-black/50 overlay to ensure the image remains visible but text is legible. Apply a parallax effect on scroll.",
+    "Include a floating WhatsApp button fixed to the bottom right with a clear #25D366 color to break the palette purely for conversion focus.",
+    "For the Admin panel, use a dense, data-heavy grid (control room grid) with a slightly darker background for the sidebar to create hierarchy.",
+    "Never use placehold.it or similar. Use the images provided in the media section of this JSON.",
+    "Configure Tailwind with the fonts: extend fontFamily in tailwind.config.js with serif: ['Playfair Display', 'serif'] and sans: ['Nunito', 'sans-serif'].",
+    "Menu should reflect Food Panda style items but visually upgraded to match the luxury dark theme."
+  ]
+}
