@@ -5,6 +5,18 @@ const AuthContext = createContext(null);
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
+// Configure axios defaults
+axios.defaults.withCredentials = true;
+
+// Add request interceptor for auth token
+axios.interceptors.request.use((config) => {
+  const token = localStorage.getItem('access_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,29 +27,33 @@ export function AuthProvider({ children }) {
 
   const checkAuth = async () => {
     try {
-      const { data } = await axios.get(`${API}/auth/me`, {
-        withCredentials: true,
-      });
+      const { data } = await axios.get(`${API}/auth/me`);
       setUser(data);
     } catch (error) {
       setUser(null);
+      localStorage.removeItem('access_token');
     } finally {
       setLoading(false);
     }
   };
 
   const login = async (email, password) => {
-    const { data } = await axios.post(
-      `${API}/auth/login`,
-      { email, password },
-      { withCredentials: true }
-    );
+    const { data } = await axios.post(`${API}/auth/login`, { email, password });
+    // Store token in localStorage as fallback
+    if (data.token) {
+      localStorage.setItem('access_token', data.token);
+    }
     setUser(data);
     return data;
   };
 
   const logout = async () => {
-    await axios.post(`${API}/auth/logout`, {}, { withCredentials: true });
+    try {
+      await axios.post(`${API}/auth/logout`, {});
+    } catch (e) {
+      // Ignore logout errors
+    }
+    localStorage.removeItem('access_token');
     setUser(null);
   };
 

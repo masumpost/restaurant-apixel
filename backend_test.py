@@ -242,22 +242,49 @@ class RestaurantAPITester:
         """Test that admin endpoints require authentication"""
         print("\n🚫 Testing Unauthorized Access...")
         
+        # Create a new session without authentication
+        unauth_session = requests.Session()
+        headers = {'Content-Type': 'application/json'}
+        
         # Try to access admin endpoints without auth
-        success, _ = self.run_test(
-            "Unauthorized Blog Access", 
-            "GET", 
-            "blogs/all", 
-            401
-        )
-        
-        success2, _ = self.run_test(
-            "Unauthorized Contact Access", 
-            "GET", 
-            "contacts", 
-            401
-        )
-        
-        return success and success2
+        print("   Testing /api/blogs/all without auth...")
+        try:
+            response = unauth_session.get(f"{self.api_url}/blogs/all", headers=headers)
+            success1 = response.status_code == 401
+            if success1:
+                print("✅ Unauthorized Blog Access - Correctly returned 401")
+                self.tests_passed += 1
+            else:
+                print(f"❌ Unauthorized Blog Access - Expected 401, got {response.status_code}")
+                self.failed_tests.append({
+                    "test": "Unauthorized Blog Access",
+                    "expected": 401,
+                    "actual": response.status_code
+                })
+        except Exception as e:
+            print(f"❌ Unauthorized Blog Access - Error: {e}")
+            success1 = False
+            
+        print("   Testing /api/contacts without auth...")
+        try:
+            response = unauth_session.get(f"{self.api_url}/contacts", headers=headers)
+            success2 = response.status_code == 401
+            if success2:
+                print("✅ Unauthorized Contact Access - Correctly returned 401")
+                self.tests_passed += 1
+            else:
+                print(f"❌ Unauthorized Contact Access - Expected 401, got {response.status_code}")
+                self.failed_tests.append({
+                    "test": "Unauthorized Contact Access", 
+                    "expected": 401,
+                    "actual": response.status_code
+                })
+        except Exception as e:
+            print(f"❌ Unauthorized Contact Access - Error: {e}")
+            success2 = False
+            
+        self.tests_run += 2
+        return success1 and success2
 
 def main():
     print("🍽️  Starting Panshi Restaurant API Tests")
